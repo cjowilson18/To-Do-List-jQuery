@@ -1,5 +1,7 @@
 $(document).ready(function() {
 console.log("LFG");
+ 
+
 
 var addToList= function () {
     $.ajax({
@@ -14,6 +16,8 @@ var addToList= function () {
         }),
         success: function(response, textStatus) {
             console.log(response);
+            $('#new-task-additions').val(' ');
+            gandDTasks();
         },
         error: function( request, textStatus, errorMessage) {
             console.log(errorMessage);
@@ -21,13 +25,19 @@ var addToList= function () {
     });
 }
 
-$('#add-tasks').on
+$('#add-tasks').on('submit', function(e) {
+    e.preventDefault();
+    addToList();
+});
 
-    $.ajax({
+var gandDTasks= function () {
+
+$.ajax({
     type:'GET',
     url: 'https://fewd-todolist-api.onrender.com/tasks?api_key=213',
     dataType: 'json',
     success: function(response, textStatus) {
+        $('#toDoItems').empty();
         response.tasks.forEach(function(task) {
             $('#toDoItems').append("<p>" + task.content + "<p>"); 
         })
@@ -35,8 +45,8 @@ $('#add-tasks').on
     error: function (request, textStatus, errorMessage) {
         console.log(errorMessage);
     }
-    });
-
+    });   
+}
 
 
 });  
