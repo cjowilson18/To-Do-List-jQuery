@@ -1,7 +1,5 @@
 $(document).ready(function() {
     console.log("LFG");
- 
-
 
       var gandDTasks= function () {
     
