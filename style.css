@@ -1,3 +1,26 @@
 h1{
-    color: purple;
+    color: rgb(209, 167, 209);
+    margin-bottom: 30px;
+}
+
+.delete{
+    margin-right: 10px;
+}
+
+.container{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.row {
+    color: aliceblue;
+}
+
+.delete, .addingButton{
+    color: black;
+}
+
+body{
+    background-image: url('boris-misevic-su5TYVAf1xM-unsplash.jpg');
 }
